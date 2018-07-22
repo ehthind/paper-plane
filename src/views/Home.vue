@@ -1,17 +1,16 @@
 <template>
   <div>
-
+    <quick-quote> </quick-quote>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import QuickQuote from '@/components/QuickQuote'
 
 export default {
   name: 'home',
   components: {
-
+    QuickQuote
   }
 }
 </script>
