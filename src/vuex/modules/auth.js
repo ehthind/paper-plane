@@ -1,3 +1,5 @@
+import userAPI from '@/api/users'
+
 export default {
   namespaced: true,
 
@@ -27,6 +29,19 @@ export default {
   },
 
   actions: {
-
+    login ({commit}, credentials) {
+      return new Promise((resolve, reject) => {
+        userAPI.login(credentials)
+          .then(response => {
+            resolve(response)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+          .finally(() => {
+            console.log('damnnnn girl')
+          })
+      })
+    }
   }
 }

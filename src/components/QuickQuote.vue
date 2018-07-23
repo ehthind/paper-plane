@@ -43,13 +43,15 @@
     </el-row>
     <el-row>
       <el-col :span="24" :push=".1">
-        <el-button class="get-quote-button" type="primary">Get Quote</el-button>
+        <el-button class="get-quote-button" @click="getQuote()" type="primary">Get Quote</el-button>
       </el-col>
     </el-row>
   </el-card>
 </template>
 
 <script>
+import {mapActions} from 'vuex'
+
 export default {
   name: 'QuickQuote',
   props: {
@@ -75,7 +77,16 @@ export default {
 
   },
   methods: {
+    ...mapActions('auth', [
+      'login'
+    ]),
 
+    getQuote () {
+      this.login({email: '', password: ''})
+        .then(response => {
+          console.log(response)
+        })
+    }
   }
 
 }
