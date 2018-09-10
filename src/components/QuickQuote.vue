@@ -82,7 +82,7 @@ export default {
     ]),
 
     getQuote () {
-      this.login({email: '', password: ''})
+      this.login({'username': 'temp', 'password': 'temp'})
         .then(response => {
           console.log(response)
         })
